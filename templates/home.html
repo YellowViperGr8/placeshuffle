@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Place Shuffler</title>
+    <style>
+      body {
+
+        background-color:LightBlue;
+        font-family: Arial, sans-serif;
+        text-align: center;
+      }
+      h1 {
+        text-align: center;
+      }
+      .row {
+        background-color:LightGray;
+        display: inline-block;
+        vertical-align: top;
+        margin: 20px;
+
+        border: 1px solid DodgerBlue;
+        padding: 10px;
+        width: 200px;
+      }
+      .button-container {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Place Shuffler</h1>
+    <div class="button-container">
+      <form action="" method="post">
+        <input type="submit" name="shuffle" value="Shuffle">
+        {% if row_1 %}
+          <input type="submit" name="reshuffle" value="Reshuffle">
+        {% endif %}
+      </form>
+    </div>
+    {% if row_1 %}
+      <div style="text-align: center;">
+        <div class="row">
+          <h2>Row 1:</h2>
+          <ul>
+            {% for pair in row_1 %}
+              <li>{{ pair[0] }} - {{ pair[1] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="row">
+          <h2>Row 2:</h2>
+          <ul>
+            {% for pair in row_2 %}
+              <li>{{ pair[0] }} - {{ pair[1] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="row">
+          <h2>Row 3:</h2>
+          <ul>
+            {% for pair in row_3 %}
+              <li>{{ pair[0] }} - {{ pair[1] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="row">
+          <h2>Row 4:</h2>
+          <ul>
+            {% for pair in row_4 %}
+              <li>{{ pair[0] }} - {{ pair[1] }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+  </body>
+</html>
